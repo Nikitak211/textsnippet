@@ -1,0 +1,27 @@
+{
+  "name": "textsnippet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikitak211/textsnippet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikitak211/textsnippet/issues"
+  },
+  "homepage": "https://github.com/Nikitak211/textsnippet#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "node": "^16.6.1",
+    "nodemon": "^2.0.12",
+    "textgen": "0.0.0",
+    "txtgen": "^2.2.8"
+  }
+}
