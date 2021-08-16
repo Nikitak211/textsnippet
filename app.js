@@ -1,20 +1,16 @@
 const express = require('express');
-
+const path = require('path');
 const app = express();
 
-app.use(express.static('./methods-public'));
+app.use(express.static('./public'))
 
-app.use(express.urlencoded({extended: false}));
-
-app.use(express.json());
-app.post('/api/postman/people',(req, res)=>{
-    let {html} = req.body
-    if(!html){
-        return res.status(400).json({success: false, msg:'Not a valid url'})
-    }
-    res.status(201).send({success: true })})
-
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve( __dirname, './snippet/index.html'))
+})
+app.all('*', (req, res) => {
+    res.status(404).send('<h1>Home page not found</h1>')
+})
 
 app.listen(5000, ()=> {
     console.log('listening on port 5000....')
-})
+});
