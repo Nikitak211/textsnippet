@@ -5,37 +5,17 @@ const txtgen = require('txtgen');
 
 const app = express();
 
-// init middleware
-// app.use(logger);
-
 //body parser Midware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
 //PATH to Public folder
-app.use(express.static(path.join(__dirname, 'public')))
-
-// API route
-app.use('/api/members', require('./routes/api/members'))
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve( __dirname, './public/index.html'))
-    const submit = document.getElementById('submit');
-    submit.addEventListener('click', textUp);
-
-    function textUp(){
-       const parent  = document.getElementById('parent')
-        const child = document.createElement('li')
-        const total = document.createTextNode(TEXT);
-        child.appendChild(total);
-        parent.replaceChild(child, parent.childNodes[0]);
-
-
-    }
-
-
 })
 
 app.all('*', (req, res) => {
