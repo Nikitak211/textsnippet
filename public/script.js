@@ -1,9 +1,7 @@
 // Find the button
 // when you click the button, it should call a function "getSnippet"
-const button = document.getElementById('but');
+const button = document.getElementById('generate-snippet-btn');
 button.addEventListener('click', getSnippet);
-
-
 
 const paragraph = document.getElementById('text-snippet');
 
@@ -13,6 +11,5 @@ function getSnippet() {
     // find the "text-snippet" element and set it's text to the response's text
     fetch('/generateText')
         .then(response => response.text()
-        .then(data => paragraph.innerHTML = data ))
-;
+        .then(data => paragraph.innerHTML = data ));
 }

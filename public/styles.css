@@ -1,75 +1,81 @@
 *{
-    background-color:#FFA07A;
+background-color:#FFA07A;
 }
-
 body .form {
-    position: absolute;
-    margin:auto 4em ;
-    background-color: rgba(51, 51, 51, 0.185);
-    width: 450px;
-    height: 450px;
-    top: 50px;
-    left: 0;
-    border: 2px solid rgba(0, 0, 0, 0);
-    border-left:2px solid rgba(68, 68, 68, 0.178) ;
-    border-top:2px solid rgba(68, 68, 68, 0.178) ;
-    box-shadow: -8px -7px rgba(68, 68, 68, 0.082), -16px -14px rgba(68, 68, 68, 0.123), -24px -21px rgba(68, 68, 68, 0.178);
-    border-top:2px solid rgba(68, 68, 68, 0.178) ;
-    border-radius: 4px;
-    box-shadow: 2px;
+position: absolute;
+margin:auto 4em ;
+background-color: rgba(51, 51, 51, 0.185);
+width: 450px;
+height: 450px;
+top: 50px;
+left: 0;
+border: 2px solid rgba(0, 0, 0, 0);
+border-left:2px solid rgba(68, 68, 68, 0.178) ;
+border-top:2px solid rgba(68, 68, 68, 0.178) ;
+box-shadow: -8px -7px rgba(68, 68, 68, 0.082), -16px -14px rgba(68, 68, 68, 0.123), -24px -21px rgba(68, 68, 68, 0.178);
+border-top:2px solid rgba(68, 68, 68, 0.178) ;
+border-radius: 4px;
+box-shadow: 2px;
 }
-
 label{
-    position: relative;
-    background-color:transparent;
-    top: 50px;
-    left: 0;
-    display: grid;
-    place-items: center;
-
+position: relative;
+background-color:transparent;
+top: 50px;
+left: 0;
+display: grid;
+place-items: center;
 }
 .snip {
-    position: relative;
-    display: grid;
-    place-items: center;
-    top: 0;
-    left: 0;
-    background-color:transparent;
+position: relative;
+display: grid;
+place-items: center;
+top: 0;
+left: 0;
+background-color:transparent;
 }
 .snip h1 {
-    background-color:transparent;
+background-color:transparent;
 }
-.but {
-    background-color:transparent;
-    position: relative;
-    display:grid ;
-    place-items:center;
-    top: 0;
-    left: 0;
+.button-container{
+background-color:transparent;
+position: relative;
+display:grid ;
+place-items:center;
+top: 0;
+left: 0;
 }
 button{
-    position: absolute;
-    background-color:transparent;
-    border-color: transparent;
-    border:1px solid rgba(49, 49, 49, 0.432);
+position: absolute;
+background-color:transparent;
+border-color: transparent;
+border:1px solid rgba(49, 49, 49, 0.432);
 }
 button:hover{
-    border:3px solid rgba(134, 255, 110, 0.301);
-    background-color:rgba(134, 255, 110, 0.301);
+border:3px solid rgba(134, 255, 110, 0.301);
+background-color:rgba(134, 255, 110, 0.301);
 }
-
-.text {
-    position: absolute;
-    width: 400px ;
-    font-size: 10px;
-    background-color:transparent;
-background-image:linear-gradient(90deg, rgba(250, 14, 14, 0.212),rgba(25, 0, 255, 0.795)) ;
+.text{
+position: relative;
+font-size: 16px;
+background-size:5% ;
+background-image:linear-gradient(90deg, red, blue);
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+transition: background-size 1000ms ease;
+}
+.text-container{
+position: relative; ;
+background-color:transparent;
+background-image:linear-gradient(90deg, blue, red);
 background-size:0% 1px  ;
 background-repeat: no-repeat;
 background-position:left bottom;
 transition: background-size 350ms ease;
 }
-
 .text:hover{
-    background-size:100% 1px  ;
+background-size:100% ;
+}
+.text-container:hover{
+background-size:100% 1px ;
 }
