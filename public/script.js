@@ -15,8 +15,7 @@ function getSnippet() {
     // find the "text-snippet" element and set it's text to the response's text
     return new Promise((resolve, reject) => {
         if (getSnippet()){
-            resolve()
+            resolve(text)
         }
     })
-
 }
