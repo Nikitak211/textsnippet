@@ -13,6 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 //PATH to Public folder
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
+// Create a new (GET METHOD) API route /generateText
+// inside this route generate a text snippet using "txtgen" and send it as a response
+app.get('/generateText', (req, res) => {
+    const textsnippet = txtgen.sentence();
+    res.send(textsnippet)
+})
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve( __dirname, './public/index.html'))

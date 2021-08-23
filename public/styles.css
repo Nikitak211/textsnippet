@@ -1,7 +1,10 @@
 *{
-    background-color:#FFA07A;
+    background-color:#3fc095;
+    transition: background-color 400ms ease;
 }
-
+h1{
+    color:#8bdb23;
+}
 body .form {
     position: absolute;
     margin:auto 4em ;
@@ -13,12 +16,13 @@ body .form {
     border: 2px solid rgba(0, 0, 0, 0);
     border-left:2px solid rgba(68, 68, 68, 0.178) ;
     border-top:2px solid rgba(68, 68, 68, 0.178) ;
-    box-shadow: -8px -7px rgba(68, 68, 68, 0.082), -16px -14px rgba(68, 68, 68, 0.123), -24px -21px rgba(68, 68, 68, 0.178);
+    box-shadow: -8px -7px rgba(68, 68, 68, 0.082),
+                -16px -14px rgba(68, 68, 68, 0.123),
+                -24px -21px rgba(68, 68, 68, 0.178);
     border-top:2px solid rgba(68, 68, 68, 0.178) ;
     border-radius: 4px;
     box-shadow: 2px;
 }
-
 label{
     position: relative;
     background-color:transparent;
@@ -26,7 +30,6 @@ label{
     left: 0;
     display: grid;
     place-items: center;
-
 }
 .snip {
     position: relative;
@@ -39,7 +42,7 @@ label{
 .snip h1 {
     background-color:transparent;
 }
-.but {
+.button-container{
     background-color:transparent;
     position: relative;
     display:grid ;
@@ -56,4 +59,36 @@ button{
 button:hover{
     border:3px solid rgba(134, 255, 110, 0.301);
     background-color:rgba(134, 255, 110, 0.301);
+}
+.text{
+    position: relative;
+    font-size: 16px;
+    background-size:5% ;
+    background-image:
+        linear-gradient(90deg, black,
+      rgba(58, 58, 58, 0.808));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-size 1000ms ease;
+}
+.text-container{
+    position: relative; ;
+    background-color:transparent;
+    background-image:
+        linear-gradient(90deg,
+      rgba(116, 116, 116, 0.692),black );
+    background-size:0% 1px;
+    background-repeat: no-repeat;
+    background-position:left bottom;
+    transition: background-size 350ms ease;
+}
+.text:hover{
+    background-size:100% ;
+}
+.text-container:hover{
+    background-size:100% 1px ;
+}
+html:hover{
+    background-color:rgba(24, 226, 74, 0.89);
 }
