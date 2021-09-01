@@ -15,9 +15,11 @@ speech.lang = "en";
     fetch('/generateText')
         .then(response => response.text()
         .then(data => paragraph.innerHTML = data)
-        .then(data => response)
-        .then(speech.text = data )
-        .then(window.speechSynthesis.speak(speech))
-        );      
+        .then(function(text){
+            speech.text = text;
+            window.speechSynthesis.speak(speech)
+                            }
+            )
+            )
 }
         
