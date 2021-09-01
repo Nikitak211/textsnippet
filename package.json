@@ -18,10 +18,12 @@
   "homepage": "https://github.com/Nikitak211/textsnippet#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "google-tts-api": "^2.0.2",
     "http": "0.0.1-security",
     "moment": "^2.29.1",
     "node": "^16.6.1",
     "nodemon": "^2.0.12",
+    "text-to-speech-js": "^1.1.10",
     "textgen": "0.0.0",
     "txtgen": "^2.2.8",
     "uuid": "^8.3.2"
