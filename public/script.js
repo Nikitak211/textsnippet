@@ -10,7 +10,7 @@ function getSnippet() {
     // wait for it to return response (read about **promises** and **async await**), take the text that it provided
     // find the "text-snippet" element and set it's text to the response's text
 let speech = new SpeechSynthesisUtterance();
-speech.lang = "en";
+    speech.lang = "en";
 
     fetch('/generateText')
         .then(response => response.text()
