@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const logger = require('./midware/logger')
 const txtgen = require('txtgen');
 
 const app = express();
