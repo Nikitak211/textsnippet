@@ -37,15 +37,6 @@ function getSnippet() {
 }
 }
 
-//sending a number
-var send = new XMLHttpRequest();
-send.open('GET', '/server', true );
-
-send.onload = function e(){
-    inputs.number
-}
-send.send(e())
-
 // Trigers Error 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;

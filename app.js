@@ -16,15 +16,12 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // Create a new (GET METHOD) API route /generateText
 // inside this route generate a text snippet using "txtgen" and send it as a response
-app.get('/generateText', (req, res) => {
-    const textsnippet = txtgen.sentence();
+app.all('/generateText', (req, res) => {
+    const textsnippet = txtgen.sentence() ;
+    
     res.send(textsnippet)
 })
-app.get('/sum', (req, res) => {
-    fetch('/server')
-    .then(response => response.text()
-    .then(data  => paragraph.innerHTML  = data ))
-})
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve( __dirname, './public/index.html'))
