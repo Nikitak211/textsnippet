@@ -32,11 +32,10 @@ label{
     place-items: center;
 }
 .snip {
-    position: relative;
-    display: grid;
-    place-items: center;
+    position: absolute;
+    margin: 0 auto;
     top: 0;
-    left: 0;
+    left: 31%;
     background-color:transparent;
 }
 .snip h1 {
@@ -55,16 +54,19 @@ button{
     background-color:transparent;
     border-color: transparent;
     border:1px solid rgba(49, 49, 49, 0.432);
+    margin: auto;
+    top: 100px ;
 }
 button:hover{
     border:3px solid rgba(134, 255, 110, 0.301);
     background-color:rgba(134, 255, 110, 0.301);
 }
 .text{
-    width: 400px;
+    width: 447px;
     height: 175px;
-    top:15px;
     position: relative;
+    top: 14em;
+    left: 0;
     font-size:12px;
     padding-bottom: 100px;
     background-size:5% ;
@@ -92,4 +94,38 @@ p{
 }
 span{
     background-color:transparent;
+}
+.inputs-form{
+    background-color:transparent;
+    position:absolute;
+    margin: auto;
+    left: 31%;
+    top: 60px;
+}
+.inputs-form.error{
+    visibility: visible;
+    background-color:transparent;
+    position:absolute;
+    margin: auto;
+    left: 31%;
+    top: 60px;
+}
+.inputs-form small{
+    visibility: hidden;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background:linear-gradient(45deg , red, blue);
+    color:rgb(0, 0, 0);
+    position:absolute;
+    height: 75%;
+    width: 50%;
+    bottom:0;
+    left:14em;
+}
+.inputs-form.error small{
+    visibility: visible;
+}
+.paragraphs{
+    background-color:transparent;
+   
 }

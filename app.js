@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const txtgen = require('txtgen');
 
+
+
 const app = express();
 
 //body parser Midware
@@ -17,6 +19,11 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 app.get('/generateText', (req, res) => {
     const textsnippet = txtgen.sentence();
     res.send(textsnippet)
+})
+app.get('/sum', (req, res) => {
+    fetch('/server')
+    .then(response => response.text()
+    .then(data  => paragraph.innerHTML  = data ))
 })
 
 app.get('/', (req, res) => {
