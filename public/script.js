@@ -24,13 +24,13 @@ function getSnippet() {
     }
 
     // checks for letters numbers and empty space.
-    if(inputBox === null){
+    if(data === ""){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (inputBox.value.match(letters)){
+    else if (data.match(letters)){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (inputBox.value.match(numbers)){ fetch('/generateText',options)
+    else if (data.match(numbers)){ fetch('/generateText',options)
         .then(response => response.text()
         .then(data  => paragraph.innerHTML  = data )
         .then(function(text){
