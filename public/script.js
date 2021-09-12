@@ -9,7 +9,7 @@ function getSnippet() {
     // call the server using "fetch" to '/generateText' API route
     // wait for it to return response (read about **promises** and **async await**), take the text that it provided
     // find the "text-snippet" element and set it's text to the response's text
-
+    const data = inputs.value
     const inputBox = inputs;
     let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
@@ -17,16 +17,20 @@ function getSnippet() {
     // detects number && letters
     let letters = /^[A-Za-z]+$/;
     let numbers = /^[0-9]+$/;
+    
+    const options = {
+      method: "POST",
+      body: data
+    }
 
     // checks for letters numbers and empty space.
-    if(inputBox === "" || inputBox === null){
+    if(inputBox === null){
         setErrorFor( inputs, 'please enter a number')
     }
     else if (inputBox.value.match(letters)){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (inputBox.value.match(numbers)){
-     fetch('/generateText')
+    else if (inputBox.value.match(numbers)){ fetch('/generateText',options)
         .then(response => response.text()
         .then(data  => paragraph.innerHTML  = data )
         .then(function(text){
