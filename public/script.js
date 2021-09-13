@@ -9,8 +9,8 @@ function getSnippet() {
     // call the server using "fetch" to '/generateText' API route
     // wait for it to return response (read about **promises** and **async await**), take the text that it provided
     // find the "text-snippet" element and set it's text to the response's text
-    const data = inputs.value
-    const inputBox = inputs;
+    const sumNum = inputs.value
+    const sumNum1 = {score: inputs.value}
     let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
@@ -20,17 +20,21 @@ function getSnippet() {
     
     const options = {
       method: "POST",
-      body: data
+      body: JSON.stringify(sumNum1) ,
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+      
     }
+    console.log(sumNum1)
 
     // checks for letters numbers and empty space.
-    if(data === ""){
+    if(sumNum === ""){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (data.match(letters)){
+    else if (sumNum.match(letters)){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (data.match(numbers)){ fetch('/generateText',options)
+    else if (sumNum.match(numbers)){ 
+        fetch('/generateText',options)
         .then(response => response.text()
         .then(data  => paragraph.innerHTML  = data )
         .then(function(text){
