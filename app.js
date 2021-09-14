@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
-const txtgen = require('txtgen');
-
+const midware = require('./midware/midware');
 const app = express();
 
 //body parser Midware
@@ -13,19 +12,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // Create a new (GET METHOD) API route /generateText
 // inside this route generate a text snippet using "txtgen" and send it as a response
-app.post('/generateText', (req, res,) => {
-    
-    const sum = req.body.score;
-
-    const textsnippet =  txtgen.sentence();
-
-    const array = [textsnippet]
-    
-    for(let i = 0; i < sum ; i++){
-      array.push(textsnippet) = snippet
-    }
-    res.send(textsnippet);
-})
+app.post('/generateText', midware.textgen )
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve( __dirname, './public/index.html'))
