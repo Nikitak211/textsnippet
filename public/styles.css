@@ -3,7 +3,7 @@
     transition: background-color 400ms ease;
 }
 h1{
-    color:#2a284e3d;
+    color: rgba(0, 0, 0, 0.678);
 }
 body .form {
     position: absolute;
@@ -119,6 +119,9 @@ span{
     border: 2px solid transparent;
     border-radius: 4px;
  }
+ input::placeholder{
+    color: rgba(0, 0, 0, 0.678);
+  }
  .span{
     background-color: transparent;
     position:absolute;
