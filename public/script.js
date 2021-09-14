@@ -40,6 +40,7 @@ function getSnippet() {
         .then(function(text){
             speech.text = text;
             window.speechSynthesis.speak(speech)
+            setSucces(inputs)
         }
     ))
 }
@@ -51,6 +52,10 @@ function setErrorFor(input, message) {
 	const small = formControl.querySelector('small');
 	formControl.className = 'inputs-form error';
 	small.innerText = message;
+}
+function setSucces(input, message) {
+	const formControl = input.parentElement;
+	formControl.className = 'inputs-form';
 }
 
 

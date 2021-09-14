@@ -3,7 +3,7 @@
     transition: background-color 400ms ease;
 }
 h1{
-    color:#8bdb23;
+    color:#2a284e3d;
 }
 body .form {
     position: absolute;
@@ -81,8 +81,21 @@ button:hover{
 }
 
 html:hover{
-    background-color:rgba(24, 226, 74, 0.89);
-}
+    background-color:rgba(250, 94, 94, 0.89);
+    animation: blink-animation 0.3s steps(5, start) infinite;
+    -webkit-animation: blink-animation 0.3s steps(5, start) infinite;
+  }
+  @keyframes blink-animation {
+    to {
+        background-color:rgba(46, 78, 255, 0.89);
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+        background-color:rgba(240, 54, 54, 0.89);
+    }
+  }
+
 .volume{
     background-color:transparent;
 }
@@ -114,13 +127,13 @@ span{
     visibility: hidden;
     border: 1px solid transparent;
     border-radius: 2px;
-    background:linear-gradient(45deg , red, blue);
+    background:linear-gradient(45deg , rgba(255, 0, 0, 0.432), rgba(0, 0, 255, 0.479));
     color:rgb(0, 0, 0);
     position:absolute;
     height: 75%;
-    width: 50%;
+    width: 75%;
     bottom:0;
-    left:14em;
+    left:13.3em;
 }
 .inputs-form.error small{
     visibility: visible;
