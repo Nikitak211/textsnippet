@@ -81,11 +81,11 @@ button:hover{
 }
 
 html:hover{
-    background-color:rgba(250, 94, 94, 0.89);
-    animation: blink-animation 0.3s steps(5, start) infinite;
-    -webkit-animation: blink-animation 0.3s steps(5, start) infinite;
+    background-color:#5AC87ED9;
+    /*animation: blink-animation 0.3s steps(5, start) infinite;
+    -webkit-animation: blink-animation 0.3s steps(5, start) infinite; */
   }
-  @keyframes blink-animation {
+  /* @keyframes blink-animation {
     to {
         background-color:rgba(46, 78, 255, 0.89);
     }
@@ -94,7 +94,7 @@ html:hover{
     to {
         background-color:rgba(240, 54, 54, 0.89);
     }
-  }
+  } */
 
 .volume{
     background-color:transparent;
