@@ -1,16 +1,18 @@
-// Find the button
-// when you click the button, it should call a function "getSnippet"
+// all elements for the script from the index .
 const inputs = document.getElementById('paragraphInput');
 const paragraph = document.getElementById('text-snippet');
 const button = document.getElementById('generate-snippet-btn');
+
+// event listener for click events.
 button.addEventListener('click', getSnippet);
 
+// get snippet function 
 function getSnippet() {
-    // call the server using "fetch" to '/generateText' API route
-    // wait for it to return response (read about **promises** and **async await**), take the text that it provided
-    // find the "text-snippet" element and set it's text to the response's text
-    const sumNum = inputs.value
-    const sumNum1 = {score: inputs.value}
+    // getting the value of the input.
+    const amountOfSnippetsToGenerate = inputs.value
+    const requestPayload = {score: amountOfSnippetsToGenerate}
+
+    // speech settings
     let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
@@ -18,32 +20,38 @@ function getSnippet() {
     let letters = /^[A-Za-z]+$/;
     let numbers = /^[0-9]+$/;
     
+    // options for fetch
     const options = {
       method: "POST",
-      body: JSON.stringify(sumNum1) ,
+      body: JSON.stringify(requestPayload) ,
       headers: {"Content-type": "application/json; charset=UTF-8"}
-      
     }
-    console.log(sumNum1)
 
-    // checks for letters numbers and empty space.
-    if(sumNum === ""){
+    // checks for letters and empty spaces, and bug preventing ..
+    if(amountOfSnippetsToGenerate === ""){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (sumNum.match(letters)){
+    else if (amountOfSnippetsToGenerate.match(letters)){
         setErrorFor( inputs, 'please enter a number')
     }
-    else if (sumNum.match(numbers)){ 
-        fetch('/generateText',options)
+    else if (amountOfSnippetsToGenerate > 10 ){
+        setErrorFor( inputs, 'cannot ask more then 10')
+    }
+    else if (amountOfSnippetsToGenerate <= 0 ){
+        setErrorFor( inputs, 'cannot ask 0 generates')
+    }
+    else if (amountOfSnippetsToGenerate.match(numbers)){ 
+        fetch('/api/generateText',options)
         .then(response => response.text()
-        .then(data  => paragraph.innerHTML  = data )
-        .then(function(text){
-            speech.text = text;
+        .then((data) => {
+            // sending data and speaking .
+            speech.text = data;
             window.speechSynthesis.speak(speech)
+            paragraph.innerHTML = data
             setSucces(inputs)
-        }
-    ))
-}
+            })
+        )
+    }
 }
 
 // Trigers Error 
@@ -53,6 +61,7 @@ function setErrorFor(input, message) {
 	formControl.className = 'inputs-form error';
 	small.innerText = message;
 }
+// Trigers success
 function setSucces(input, message) {
 	const formControl = input.parentElement;
 	formControl.className = 'inputs-form';

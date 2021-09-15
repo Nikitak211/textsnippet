@@ -161,7 +161,8 @@ span{
     height: 75%;
     width: 75%;
     bottom:0;
-    left:13.3em;
+    left:14.8em;
+    font-size: 12px;
 }
 .inputs-form.error small{
     visibility: visible;
