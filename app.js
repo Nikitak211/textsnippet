@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 // posts a textsnippet to the page.
-app.use('/api/generateText', textsnippet )
+app.use('/api', textsnippet )
 
 // route to main index page.
 app.get('/', (req, res) => {

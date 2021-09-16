@@ -40,15 +40,19 @@ function getSnippet() {
     else if (amountOfSnippetsToGenerate <= 0 ){
         setErrorFor( inputs, 'cannot ask 0 generates')
     }
-    else if (amountOfSnippetsToGenerate.match(numbers)){ 
+    else { 
         fetch('/api/generateText',options)
         .then(response => response.text()
-        .then((data) => {
+        .then((data, error) => {
             // sending data and speaking .
+            if(data.error !== null){
             speech.text = data;
             window.speechSynthesis.speak(speech)
             paragraph.innerHTML = data
-            setSucces(inputs)
+            setSucces(inputs)}
+            else{
+                error
+            }
             })
         )
     }
