@@ -1,0 +1,17 @@
+{
+    "source": {
+        "include": ["api","public"],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "plugins": ["plugins/markdown"],
+    "template": {
+        "cleaverLinks": true,
+        "monospaceLinks": true
+    },
+    "opts": {
+        "rescue": true,
+        "destination": "./docs/",
+        "template": "default"
+    }
+}

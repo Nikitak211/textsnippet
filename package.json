@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,8 @@
     "nodemon": "^2.0.12",
     "txtgen": "^2.2.8",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.7"
   }
 }
