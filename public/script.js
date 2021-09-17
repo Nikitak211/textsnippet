@@ -2,31 +2,15 @@
 const inputs = document.getElementById('paragraphInput');
 const paragraph = document.getElementById('text-snippet');
 const button = document.getElementById('generate-snippet-btn');
-// @ts-check
 
 // event listener for click events.
 button.addEventListener('click', getSnippet);
 
-/**
- *  gets snippet from the fetch.
- *
- * @property {Function} getSnippet fires a function that sends snippet to the html page.
- * @returns snippet of text
- */
 
 function getSnippet() {
     // getting the value of the input.
 
-    /**
-     * Amount the ammount inside the input
-     * @type {number}
-     */
     const amountOfSnippetsToGenerate = inputs.value;
-
-    /**
-     * Data json data for the api {@link}
-     * @type {{score: number}}
-     */
 
     const requestPayload = {score: amountOfSnippetsToGenerate}
 
@@ -38,11 +22,6 @@ function getSnippet() {
     let letters = /^[A-Za-z]+$/;
     let numbers = /^[0-9]+$/;
     
-    // options for fetch
-    /**
-     * @static
-     * @property {object} options options for the fetch api {@link fetch}
-     */
     const options = {
       method: "POST",
       body: JSON.stringify(requestPayload) ,
@@ -63,13 +42,6 @@ function getSnippet() {
         setErrorFor( inputs, 'cannot ask 0 generates')
     }
     else { 
-
-        /**
-        *  fetch api
-        * @module fetch
-        * @param {promise} fetch - fetching data from {@link post}
-        * @return {Promise<string>} The data from the fetch method. 
-        */
         fetch('/api/generateText',options)
         .then(response => response.text()
         .then((data, error) => {

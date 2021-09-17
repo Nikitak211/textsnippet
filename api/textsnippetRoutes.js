@@ -2,12 +2,6 @@ const express = require("express");
 const txtgen = require('txtgen');
 const router = express.Router();
 
-/**
- * generates text to {@link getSnippet}
- * @interface post
- * 
-*/
-
 router.post('/generateText' , (req, res) => {
     let letters = /^[A-Za-z]+$/;
     const sum = req.body.score;
