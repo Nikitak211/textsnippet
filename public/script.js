@@ -80,7 +80,7 @@ function getSnippet() {
             paragraph.innerHTML = data
             setSucces(inputs)}
             else{
-                error
+                alert(`${error}`)
             }
             })
         )
