@@ -13,13 +13,13 @@ router.post('/generateText' , (req, res) => {
 
      // checks for letters and empty spaces, and bug preventing ..
       if ( sum === "") {
-        res.send({error: 'please enter a number'})
+        res.send({error: 'Number Of Paragraphs , field cannot be empty.'})
     } else if ( sum.match(letters) ) {
-        res.send({error: 'please enter a number'})
+        res.send({error: 'Number Of Paragraphs , field must contain only numbers.'})
     } else if ( sum > 10 ) {
-        res.send({error: 'cannot ask more then 10'})
+        res.send({error: 'Number Of Paragraphs cannot be higher than 10.'})
     } else if ( sum <= 0 ) {
-        res.send({error: 'cannot ask 0 generates'})
+        res.send({error: 'Number Of Paragraphs cannot be lower than 1.'})
     } else {
         //sends data to the adress /generateText .
         res.send(textsnippet);
