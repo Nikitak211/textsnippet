@@ -14,7 +14,7 @@ router.post('/generateText' , (req, res) => {
      // checks for letters and empty spaces, and bug preventing ..
       if ( sum === "") {
         res.send({error: 'Number Of Paragraphs , field cannot be empty.'})
-    } else if ( sum.match(letters) ) {
+    } else if ( isNaN(sum) ) {
         res.send({error: 'Number Of Paragraphs , field must contain only numbers.'})
     } else if ( sum > 10 ) {
         res.send({error: 'Number Of Paragraphs cannot be higher than 10.'})

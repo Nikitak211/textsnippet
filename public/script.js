@@ -15,10 +15,6 @@ function getSnippet() {
     let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
-    // detects number && letters
-    let letters = /^[A-Za-z]+$/;
-    let numbers = /^[0-9]+$/;
-
     // fetch options.
     const options = {
       method: "POST",
@@ -29,7 +25,7 @@ function getSnippet() {
     // checks for letters and empty spaces, and bug preventing ..
       if ( amountOfSnippetsToGenerate === "") {
         setErrorFor( inputs, 'Number Of Paragraphs , field cannot be empty.')
-    } else if ( amountOfSnippetsToGenerate.match(letters)) {
+    } else if ( isNaN(amountOfSnippetsToGenerate) ) {
         setErrorFor( inputs, 'Number Of Paragraphs , field must contain only numbers.')
     } else if ( amountOfSnippetsToGenerate > 10 ) {
         setErrorFor( inputs, 'Number Of Paragraphs cannot be higher than 10.')
@@ -42,7 +38,7 @@ function getSnippet() {
             if(data.error){
                 alert(data.error)
             } else if (data === "") {
-                alert('Number Of Paragraphs cannot be symbol!')
+                alert('Unknown  error has occurred.')
             } else {
                 // sending data and speaking .
                 speech.text = data;
