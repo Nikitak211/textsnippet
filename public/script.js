@@ -38,9 +38,11 @@ function getSnippet() {
     } else {
         fetch( '/api/generateText', options )
         .then( response => response.text()
-        .then( ( data, error ) => {
-            if(data === ""){
-                alert('there seemes to be some kind of problem')
+        .then( ( data ) => {
+            if(data.error){
+                alert(data.error)
+            } else if (data === "") {
+                alert('Number Of Paragraphs cannot be symbol!')
             } else {
                 // sending data and speaking .
                 speech.text = data;
