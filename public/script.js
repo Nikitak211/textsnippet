@@ -39,10 +39,10 @@ function getSnippet() {
         fetch( '/api/generateText', options )
         .then( response => response.text()
         .then( ( data, error ) => {
-            // sending data and speaking .
-              if ( data === null ) {
-                alert( `${error}` )
+            if(data === ""){
+                alert('there seemes to be some kind of problem')
             } else {
+                // sending data and speaking .
                 speech.text = data;
                 window.speechSynthesis.speak(speech)
                 paragraph.innerHTML = data
