@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
 
 // route to every possible 404.
 app.all('*', (req, res) => {
-    res.status(404).send('<h1>Home page not found</h1>')
+    res.status(404).send('<h1>Page not found</h1>')
 })
 
 // PORT for the server.
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, ()=> console.log(`'listening on port ${PORT}....'`));
+app.listen(PORT, ()=> console.log(`listening on port ${PORT}....`));
