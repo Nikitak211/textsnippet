@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "doc": "jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/Nikitak211/textsnippet#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "moment": "^2.29.1",
@@ -24,5 +26,8 @@
     "nodemon": "^2.0.12",
     "txtgen": "^2.2.8",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.7"
   }
 }
