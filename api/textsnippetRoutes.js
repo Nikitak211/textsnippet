@@ -3,7 +3,6 @@ const txtgen = require('txtgen');
 const router = express.Router();
 
 router.post('/generateText' , (req, res) => {
-    let letters = /^[A-Za-z]+$/;
 
     //gets the body of score from the fetch option.
     const sum = req.body.score;
