@@ -16,7 +16,7 @@
 <br/>
 
 ## **Installing** ##
- *install the following dependenciea so that the app will work.*
+ *install the following dependencies so that the app will work.*
 `npm i node`
 `npm i nodemon`
 `npm i express`
