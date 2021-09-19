@@ -31,7 +31,7 @@
 
 ## **Open Browser** ##
 | *open browser and go to localhost:5000.*
- https://localhos:5000
+ https://localhost:5000
  
  <br/>
  
