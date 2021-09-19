@@ -54,3 +54,4 @@
 <br/>
 
 # *License* #
+license:gpl
