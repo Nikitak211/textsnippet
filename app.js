@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //PATH to Public folder
 app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/static/svg', express.static(path.join(__dirname, 'svg')))
 
 // posts a textsnippet to the page.
 app.use('/api', textsnippet )

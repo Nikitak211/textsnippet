@@ -1,17 +1,18 @@
-*{
-    background-color:#3fc095;
-    transition: background-color 400ms ease;
+html{
+    background-color:rgb(80, 117, 80);
 }
 h1{
     color: rgba(0, 0, 0, 0.678);
 }
 body .form {
-    position: absolute;
-    margin:auto 4em ;
+    position: relative;
+    align-items: center;
+    place-items: center;
+    margin:auto  ;
     background-color: rgba(51, 51, 51, 0.185);
     width: 450px;
     height: 450px;
-    top: 50px;
+    top: 100px;
     left: 0;
     border: 2px solid rgba(0, 0, 0, 0);
     border-left:2px solid rgba(68, 68, 68, 0.178) ;
@@ -22,6 +23,26 @@ body .form {
     border-top:2px solid rgba(68, 68, 68, 0.178) ;
     border-radius: 4px;
     box-shadow: 2px;
+}
+.volume {
+    position: absolute;
+    display:grid ;
+    place-items:center;
+    width: 30px;
+    height:30px;
+    top: 0;
+    left: 0;
+    margin: auto;
+    top: 95px ;
+    left:275px;
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
+}
+.mute{
+    background: url(/static/svg/volume-mute.svg) no-repeat;
+    border: none;
+    width:20px;
+    height:20px;
+    cursor:pointer;
 }
 label{
     position: relative;
@@ -49,7 +70,7 @@ label{
     top: 0;
     left: 0;
 }
-button{
+.button{
     position: absolute;
     background-color:transparent;
     border-color: transparent;
@@ -57,7 +78,7 @@ button{
     margin: auto;
     top: 100px ;
 }
-button:hover{
+.button:hover{
     border:3px solid rgba(134, 255, 110, 0.301);
     background-color:rgba(134, 255, 110, 0.301);
 }
@@ -82,6 +103,7 @@ button:hover{
 
 html:hover{
     background-color:#5AC87ED9;
+    transition: background-color 400ms ease;
     /*animation: blink-animation 0.3s steps(5, start) infinite;
     -webkit-animation: blink-animation 0.3s steps(5, start) infinite; */
   }
@@ -139,7 +161,7 @@ span{
     display: grid;
     justify-content: center;
  }
-.span:hover{
+ .span:hover{
     transition: 1s ;
     left: -3.5em;
  }
