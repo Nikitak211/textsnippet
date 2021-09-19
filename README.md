@@ -54,4 +54,4 @@
 <br/>
 
 # *License* #
-license:gpl
+[license gpl] (License.md)
