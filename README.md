@@ -17,15 +17,15 @@
 
 ## **Installing** ##
  *install the following dependenciea so that the app will work.*
-`<npm i node>`
-`<npm i nodemon>`
-`<npm i express>`
-`<npm i txtgen>`
+`npm i node`
+`npm i nodemon`
+`npm i express`
+`npm i txtgen`
 
 <br/>
 
 ## **Running the Application** ##
-*open the terminal and type __npm start__ it is a script inside package.json, that runs nodemon app.js .*
+*open the terminal and type* `npm start` *it is a script inside package.json, that runs nodemon app.js .*
 
 <br/>
 
