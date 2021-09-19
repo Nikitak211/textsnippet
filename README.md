@@ -32,17 +32,25 @@
 ## **Open Browser** ##
 | *open browser and go to localhost:5000.*
  https://localhos:5000
+ 
+ <br/>
+ 
 | *If page does not open check if nodemon is runing.*
+
+<br/>
+
 | *next click on generate and enjoy*
 
 <br/>
 
 # **Contributors** #
-### **8o8inCodes** ###
+ **8o8inCodes**
 
 <br/>
+
 # **Code Owner** #
-## **Nikitak211** ##
+ **Nikitak211**
  
 <br/>
-# License #
+
+# *License* #
