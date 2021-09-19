@@ -1,6 +1,6 @@
 # **Textsnippet** #
 | Textsnippet lets you generate random texts.
-| and there is an option for speach README.md
+| and there is an option for speach.
 
 <br/>
 
