@@ -19,7 +19,11 @@
             <small></small>
         </div>
             <div class="button-container">
-                <button class="button" id="generate-snippet-btn">generate</button>
+                <button type="click" class="button" id="generate-snippet-btn">generate</button>
+            </div>
+            <div class="muted">
+                <p id="output">speech muted</p>
+                <button onClick="mute" id="on" >on</button>
             </div>
         <div  class="text-container">
             <textarea readonly="true" class="text" id="text-snippet"></textarea>

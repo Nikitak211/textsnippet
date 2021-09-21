@@ -21,6 +21,7 @@ const button = document.getElementById('generate-snippet-btn');
 // event listener for click events.
 button.addEventListener('click', getSnippet);
 
+
 /**
  * @param {function} getSnippet on the event listener sends a request to the api and fetches the snippet.
  */
@@ -36,13 +37,6 @@ function getSnippet() {
     * @typedef {{score: number}} requestPayload sends json to the api.
     */   
     const requestPayload = {score: amountOfSnippetsToGenerate};
-
-    /**
-    * @typedef {speech} speech speech setup. 
-    */
-    // speech settings
-    let speech = new SpeechSynthesisUtterance();
-    speech.lang = "en";
     
     /**
     * @typedef {json} options options for the fetch method. 
@@ -84,8 +78,7 @@ function getSnippet() {
                 * and lets {@link speech} read it. 
                 */
                 // sending data and speaking .
-                speech.text = data;
-                window.speechSynthesis.speak(speech)
+                toggle(data)
                 paragraph.innerHTML = data
                 setSucces(inputs)
             }
@@ -110,3 +103,28 @@ function setSucces(input, message) {
 	const formControl = input.parentElement;
 	formControl.className = 'inputs-form';
 };
+const mute = document.getElementById("on");
+mute.addEventListener('click',toggle);
+const p = document.getElementById("output")
+
+var clicked = false;
+function toggle(read){
+    if(!clicked){
+        clicked = true;
+        mute.innerHTML="On";
+        p.innerHTML = "speech Off"
+    }else {
+        clicked = false;
+        mute.innerHTML="Off";
+        p.innerHTML = "speech on"
+        /**
+        * @typedef {speech} speech speech setup. 
+        */
+        // speech settings
+        let speech = new SpeechSynthesisUtterance();
+        speech.lang = "en";
+        speech.text = read;
+        window.speechSynthesis.speak(speech)
+        
+    }
+}

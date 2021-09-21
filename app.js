@@ -11,19 +11,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/static/svg', express.static(path.join(__dirname, 'svg')))
 
-// posts a textsnippet to the page.
+// posts a textsnippet from the api\textsnippetRoutes.js to the page.
 app.use('/api', textsnippet )
 
-// route to main index page.
+// route to main public/index.html page.
 app.get('/', (req, res) => {
     res.sendFile(path.resolve( __dirname, './public/index.html'))
 })
 
-// route to every possible 404.
+// route to 404 errors.
 app.all('*', (req, res) => {
     res.status(404).send('<h1>Page not found</h1>')
 })
 
-// PORT for the server.
+// PORT and listen for the server.
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=> console.log(`listening on port ${PORT}....`));
