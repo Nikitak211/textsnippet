@@ -7,8 +7,11 @@ const button = document.getElementById('generate-snippet-btn');
 // event listener for click events.
 button.addEventListener('click', getSnippet);
 
-function getSnippet() {
+let speech = new SpeechSynthesisUtterance();
+    speech.lang = "en";
 
+function getSnippet() {
+    
     const amountOfSnippetsToGenerate = inputs.value; 
     const requestPayload = {score: amountOfSnippetsToGenerate};
     
@@ -37,9 +40,17 @@ function getSnippet() {
             } else if (data === "") {
                 alert('Unknown  error has occurred.')
             } else {
-                paragraph.innerHTML = data
-                toggle(data)
-                setSucces(inputs) 
+                paragraph.innerHTML = data;
+                if(clicked){
+                    if(clicked){
+                        speech.text = data;
+                        window.speechSynthesis.speak(speech)
+                    } else {}
+                        window.speechSynthesis.speak(speech) 
+                } else {}
+                
+                
+                setSucces(inputs)
             }
         })
     )}
@@ -60,46 +71,33 @@ function setSucces(input) {
 	formControl.className = 'inputs-form';
 };
 
+// mute button for read snippet
 const mute = document.getElementById("on");
 mute.addEventListener('click',toggle);
 const p = document.getElementById("output")
 
-let speech = new SpeechSynthesisUtterance();
-    speech.lang = "en";
-
-var clicked = false;
-
-function toggle(text){
-    speech.text = text;
-    switch(clicked){
-        case true:
-            clicked = false;
-            mute.innerHTML="Off";
-            p.innerHTML = "speech on"
-            window.speechSynthesis.speak(speech)
-            break;
-        case false:
-            clicked = true;
-            mute.innerHTML="On";
-            p.innerHTML = "speech Off"
-            break;
-            default:
-                clicked = true;
-                mute.innerHTML="On";
-                p.innerHTML = "speech Off"
-    } 
-         
+let clicked = false;
+function toggle(){
     
+    if(clicked){
+        clicked = false;
+        mute.innerHTML="On";
+        p.innerHTML = "speech Off"
+    }else{
+        clicked = true;
+        mute.innerHTML="Off";
+        p.innerHTML = "speech On";
+    }  
 }
 
+//repeat button for readSnippet
+const repeat = document.getElementById("repeat");
+repeat.addEventListener('click', readSnippet)
 
-// const repeat = document.getElementById("repeat");
-// repeat.addEventListener('click',repeat)
-
-// function repeat(data){
-
-//     let speech = new SpeechSynthesisUtterance();
-//     speech.lang = "en";
-//     speech.text = data;
-//     window.speechSynthesis.speak(speech)
-// }
+function readSnippet(){
+    if(clicked){
+        clicked = true;
+    }else{
+        clicked = true;
+    }
+}
