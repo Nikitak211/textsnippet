@@ -38,6 +38,7 @@ function getSnippet() {
                 alert('Unknown  error has occurred.')
             } else {
                 paragraph.innerHTML = data
+                toggle(data)
                 setSucces(inputs) 
             }
         })
@@ -54,18 +55,21 @@ function setErrorFor(input, message) {
 };
 
 // Trigers success
-function setSucces(input, message) {
+function setSucces(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'inputs-form';
 };
-
 
 const mute = document.getElementById("on");
 mute.addEventListener('click',toggle);
 const p = document.getElementById("output")
 
+let speech = new SpeechSynthesisUtterance();
+    speech.lang = "en";
+
 var clicked = false;
-function toggle(read){
+function toggle(text){
+    speech.text = text;
     if(!clicked){
         clicked = true;
         mute.innerHTML="On";
@@ -78,14 +82,10 @@ function toggle(read){
         * @typedef {speech} speech speech setup. 
         */
         // speech settings
-        let speech = new SpeechSynthesisUtterance();
-        speech.lang = "en";
-        speech.text = read;
-        window.speechSynthesis.speak(speech)
         
+        window.speechSynthesis.speak(speech) 
     }
 }
-
 // const repeat = document.getElementById("repeat");
 // repeat.addEventListener('click',repeat)
 
