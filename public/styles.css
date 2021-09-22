@@ -192,11 +192,11 @@ span{
     background:linear-gradient(45deg , rgba(255, 0, 0, 0.432), rgba(0, 0, 255, 0.479));
     color:rgb(255, 255, 255);
     position:absolute;
-    height: 175%;
+    height: 177%;
     width: 75%;
     bottom:0;
-    left:14.8em;
-    font-size: 12px;
+    left:16em;
+    font-size: 11px;
 }
 .inputs-form.error small{
     visibility: visible;
@@ -213,5 +213,48 @@ span{
     justify-content:center;
     align-items:center;
     height: 1.5em;
-
+    font-family:sans-serif;
+}
+.muted p {
+    z-index: 1;
+}
+.muted button{
+    font-family:sans-serif;
+    transition: all 0.5s;
+    height: 1.5em;
+    width: 3em;
+}
+.muted button:hover{
+    color:white;
+    background-color:rgba(42, 43, 42, 0.514);
+    box-shadow:  -2px -1px #052c3d,
+    -4px -3px #e601c0,
+    -6px -5px #e9019a,
+    -8px -7px #f40468,
+    -10px -9px 10px #f79098;
+    border:2px solid #052c3d33
+}
+.repeat{
+    position: relative;
+    margin: auto;
+    margin-left:8em;
+    margin-top:-1.5em;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 1.5em;
+    width: 5em;
+    color:black;
+    font-family:sans-serif;
+    transition: all 0.5s;
+}
+.repeat:hover{
+    color:white;
+    background-color:rgba(42, 43, 42, 0.514);
+    box-shadow:  -2px -1px #052c3d,
+    -4px -3px #e601c0,
+    -6px -5px #e9019a,
+    -8px -7px #f40468,
+    -10px -9px 10px #f79098;
+    border:2px solid #052c3d33
 }
