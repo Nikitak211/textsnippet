@@ -68,24 +68,31 @@ let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
 var clicked = false;
+
 function toggle(text){
     speech.text = text;
-    if(!clicked){
-        clicked = true;
-        mute.innerHTML="On";
-        p.innerHTML = "speech Off"
-    }else {
-        clicked = false;
-        mute.innerHTML="Off";
-        p.innerHTML = "speech on"
-        /**
-        * @typedef {speech} speech speech setup. 
-        */
-        // speech settings
-        
-        window.speechSynthesis.speak(speech) 
-    }
+    switch(clicked){
+        case true:
+            clicked = false;
+            mute.innerHTML="Off";
+            p.innerHTML = "speech on"
+            window.speechSynthesis.speak(speech)
+            break;
+        case false:
+            clicked = true;
+            mute.innerHTML="On";
+            p.innerHTML = "speech Off"
+            break;
+            default:
+                clicked = true;
+                mute.innerHTML="On";
+                p.innerHTML = "speech Off"
+    } 
+         
+    
 }
+
+
 // const repeat = document.getElementById("repeat");
 // repeat.addEventListener('click',repeat)
 
