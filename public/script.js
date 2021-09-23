@@ -63,8 +63,7 @@ function readSnippet(){
 let clicked = false;
 const p = document.getElementById("output");
 const mute = document.getElementById("on");
-document.getElementById("on").onclick = toggle = (e) => {
-    e.preventDefault();
+document.getElementById("on").onclick = toggle = () => {
     if(clicked){
         clicked = false;
         mute.innerHTML="On";
