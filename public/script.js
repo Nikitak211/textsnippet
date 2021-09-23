@@ -2,19 +2,17 @@
 
 const inputs = document.getElementById('paragraphInput');
 const paragraph = document.getElementById('text-snippet');
-const button = document.getElementById('generate-snippet-btn');
-
-// event listener for click events.
-button.addEventListener('click', getSnippet);
 
 let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
-function getSnippet() {
-    
+// generates snippet button.
+// event listener for generate-snippet-btn .
+document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
+
     const amountOfSnippetsToGenerate = inputs.value; 
     const requestPayload = {score: amountOfSnippetsToGenerate};
-    
+
     // fetch options.
     const options = {
       method: "POST",
@@ -41,21 +39,42 @@ function getSnippet() {
                 alert('Unknown  error has occurred.')
             } else {
                 paragraph.innerHTML = data;
-                if(clicked){
-                    if(clicked){
-                        speech.text = data;
-                        window.speechSynthesis.speak(speech)
-                    } else {}
-                        window.speechSynthesis.speak(speech) 
+                speech.text = data;
+
+                if (clicked) {
+                    window.speechSynthesis.speak(speech);
                 } else {}
-                
-                
+
                 setSucces(inputs)
             }
         })
     )}
-   
 }
+
+//read button for readSnippet
+const repeat = document.getElementById("repeat")
+repeat.addEventListener('click',readSnippet )
+
+function readSnippet(){
+    window.speechSynthesis.speak(speech); 
+}
+
+// mute button for read snippet
+let clicked = false;
+const p = document.getElementById("output");
+const mute = document.getElementById("on");
+document.getElementById("on").onclick = toggle = (e) => {
+    e.preventDefault();
+    if(clicked){
+        clicked = false;
+        mute.innerHTML="On";
+        p.innerHTML = "speech Off"
+    }else{
+        clicked = true;
+        mute.innerHTML="Off";
+        p.innerHTML = "speech On";
+    }
+};
 
 // Trigers Error 
 function setErrorFor(input, message) {
@@ -71,33 +90,4 @@ function setSucces(input) {
 	formControl.className = 'inputs-form';
 };
 
-// mute button for read snippet
-const mute = document.getElementById("on");
-mute.addEventListener('click',toggle);
-const p = document.getElementById("output")
 
-let clicked = false;
-function toggle(){
-    
-    if(clicked){
-        clicked = false;
-        mute.innerHTML="On";
-        p.innerHTML = "speech Off"
-    }else{
-        clicked = true;
-        mute.innerHTML="Off";
-        p.innerHTML = "speech On";
-    }  
-}
-
-//repeat button for readSnippet
-const repeat = document.getElementById("repeat");
-repeat.addEventListener('click', readSnippet)
-
-function readSnippet(){
-    if(clicked){
-        clicked = true;
-    }else{
-        clicked = true;
-    }
-}
