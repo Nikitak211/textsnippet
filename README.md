@@ -15,7 +15,6 @@
 # **Getting Started** #
 
 - Clone repository 
-
 </br>
 
 `git clone <git@github.com:Nikitak211/textsnippet.git>`
@@ -29,7 +28,7 @@
 
 ## **Installing** ##
  *Install all the dependencies:*
- 
+
 `npm i `
 
 <br/>
