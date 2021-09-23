@@ -28,7 +28,8 @@
 <br/>
 
 ## **Installing** ##
- *install the following dependencies so that the app will work.*
+ *Install all the dependencies:*
+ 
 `npm i `
 
 <br/>
