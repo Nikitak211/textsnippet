@@ -1,8 +1,9 @@
-// all elements for the script from the index .
-
-const inputs = document.getElementById('paragraphInput');
+// all variables and definitions for the textSnippet javascript code.
+const amountOfSnippets = document.getElementById('paragraphInput');
 const paragraph = document.getElementById('text-snippet');
-
+const sideText = document.getElementById("mute-btn-sidetext");
+const muteText = document.getElementById("mute-btn");
+let speechMuted = false;
 let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
@@ -10,25 +11,26 @@ let speech = new SpeechSynthesisUtterance();
 // event listener for generate-snippet-btn .
 document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
 
-    const amountOfSnippetsToGenerate = inputs.value; 
+    //amount value send as JSON to the option and then to api via fetch.
+    const amountOfSnippetsToGenerate = amountOfSnippets.value; 
     const requestPayload = {score: amountOfSnippetsToGenerate};
 
-    // fetch options.
+    // options for post method for fetch.
     const options = {
-      method: "POST",
-      body: JSON.stringify(requestPayload),
-      headers: { "Content-type": "application/json; charset=UTF-8" }
+        method: "POST",
+        body: JSON.stringify(requestPayload),
+        headers: { "Content-type": "application/json; charset=UTF-8" }
     };
 
     // checks for letters and empty spaces, and bug preventing ..
       if ( amountOfSnippetsToGenerate === "") {
-        setErrorFor( inputs, 'Number Of Paragraphs , field cannot be empty.')
+        setErrorFor( amountOfSnippets, 'Number Of Paragraphs , field cannot be empty.')
     } else if ( isNaN(amountOfSnippetsToGenerate) ) {
-        setErrorFor( inputs, 'Number Of Paragraphs , field must contain only numbers.')
+        setErrorFor( amountOfSnippets, 'Number Of Paragraphs , field must contain only numbers.')
     } else if ( amountOfSnippetsToGenerate > 10 ) {
-        setErrorFor( inputs, 'Number Of Paragraphs cannot be higher than 10.')
+        setErrorFor( amountOfSnippets, 'Number Of Paragraphs cannot be higher than 10.')
     } else if ( amountOfSnippetsToGenerate <= 0 ) {
-        setErrorFor( inputs, 'Number Of Paragraphs cannot be lower than 1.')
+        setErrorFor( amountOfSnippets, 'Number Of Paragraphs cannot be lower than 1.')
     } else {
         fetch( '/api/generateText', options )
         .then( response => response.text()
@@ -40,38 +42,31 @@ document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
             } else {
                 paragraph.innerHTML = data;
                 speech.text = data;
-
-                if (clicked) {
-                    window.speechSynthesis.speak(speech);
-                } else {}
-
-                setSucces(inputs)
+                
+            if (speechMuted) {
+                window.speechSynthesis.speak(speech);
+            }
+                setSucces(amountOfSnippets)
             }
         })
     )}
 }
 
 //read button for readSnippet
-const repeat = document.getElementById("repeat")
-repeat.addEventListener('click',readSnippet )
-
-function readSnippet(){
+document.getElementById("snippet-repeat-btn").onclick = readSnippet = () => {
     window.speechSynthesis.speak(speech); 
 }
 
 // mute button for read snippet
-let clicked = false;
-const p = document.getElementById("output");
-const mute = document.getElementById("on");
-document.getElementById("on").onclick = toggle = () => {
-    if(clicked){
-        clicked = false;
-        mute.innerHTML="On";
-        p.innerHTML = "speech Off"
+document.getElementById("mute-btn").onclick = toggle = () => {
+    if(speechMuted){
+        speechMuted = false;
+        muteText.innerHTML="On";
+        sideText.innerHTML = "speech Off"
     }else{
-        clicked = true;
-        mute.innerHTML="Off";
-        p.innerHTML = "speech On";
+        speechMuted = true;
+        muteText.innerHTML="Off";
+        sideText.innerHTML = "speech On";
     }
 };
 

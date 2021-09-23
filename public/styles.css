@@ -41,7 +41,6 @@ body .form:hover{
                 -24px -21px #e9019a,
                 -32px -28px #f40468,
                 -40px -35px 10px #f79098;
-    
 }
 label{
     position: relative;
@@ -113,7 +112,7 @@ label{
 }
 
 html:hover{
-    background-color:#f0e9ea;
+    background-color:#ac646a;
     transition: background-color 400ms ease;
 }
 .volume{
