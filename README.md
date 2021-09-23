@@ -1,6 +1,6 @@
 # **Textsnippet** #
-| Textsnippet lets you generate random texts.
-| and there is an option for speach.
+> Textsnippet lets you generate random texts.
+> and there is an option for speach.
 
 <br/>
 
@@ -17,10 +17,12 @@
 
 ## **Installing** ##
  *install the following dependencies so that the app will work.*
-`npm i node`
-`npm i nodemon`
-`npm i express`
-`npm i txtgen`
+```
+npm i node
+npm i nodemon
+npm i express
+npm i txtgen
+```
 
 <br/>
 
@@ -40,6 +42,9 @@
 <br/>
 
 | *next click on generate and enjoy*
+![screenshot](readme_imgs\1.png)
+![screenshot](readme_imgs\2.png)
+![screenshot](readme_imgs\3.png)
 
 <br/>
 
@@ -49,12 +54,12 @@
 <br/>
 
 # **Mentors** #
- **8o8inCodes**
+ *best mentor* [**8o8inCodes**](https://github.com/8o8inCodes)
  
  <br/>
 
 # **Code Owner** #
- **Nikitak211**
+ [**Nikitak211**](https://github.com/Nikitak211)
  
 <br/>
 
