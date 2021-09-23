@@ -39,10 +39,10 @@
 <br/>
 
 ## **Open Browser** ##
-> *open browser and go to http://localhost:5000/*
+ *open browser and go to http://localhost:5000/*
  <br/>
  
-> *If page does not open check if nodemon is runing.*
+ *If page does not open check if nodemon is runing.*
 <br/>
 
 > *next click on generate and enjoy*
