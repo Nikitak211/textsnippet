@@ -5,10 +5,10 @@
 <br/>
 
 # **Textsnippet** #
-> Textsnippet lets you generate random texts.
+ Textsnippet lets you generate random texts.
 <br/>
 
-> and there is an option for speech.
+ and there is an option for speech.
 
 <br/>
 
@@ -17,11 +17,11 @@
 - Clone repository 
 </br>
 
-`git clone <git@github.com:Nikitak211/textsnippet.git>`
+`git clone git@github.com:Nikitak211/textsnippet.git`
 
 <br/>
 
-## **Requierd** ##
+## **Required** ##
 * NodeJs
 
 <br/>
