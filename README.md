@@ -37,7 +37,7 @@ npm i txtgen
 <br/>
 
 ## **Open Browser** ##
-| *open browser and go to localhost:5000.*
+| *open browser and go to http://localhost:5000/*
  https://localhost:5000
  
  <br/>
