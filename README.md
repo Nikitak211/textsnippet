@@ -10,7 +10,7 @@
 
 * Download or clone the repository to the computer .
 ![screenshot](/readme_imgs/4.png)
-![screenshot](/readme_imgs/5.png)
+<!-- ![screenshot](/readme_imgs/5.png) -->
 ![screenshot](/readme_imgs/6.png)
 
 <br/>
@@ -47,7 +47,7 @@ npm i txtgen
 <br/>
 
 | *next click on generate and enjoy*
-![screenshot](/readme_imgs/1.png)
+<!-- ![screenshot](/readme_imgs/1.png) -->
 ![screenshot](/readme_imgs/2.png)
 ![screenshot](/readme_imgs/3.png)
 
