@@ -1,5 +1,7 @@
 # **Textsnippet** #
 > Textsnippet lets you generate random texts.
+<br/>
+
 > and there is an option for speach.
 
 <br/>
@@ -42,9 +44,9 @@ npm i txtgen
 <br/>
 
 | *next click on generate and enjoy*
-![screenshot](readme_imgs\1.png)
-![screenshot](readme_imgs\2.png)
-![screenshot](readme_imgs\3.png)
+![screenshot](/readme_imgs/1.png)
+![screenshot](/readme_imgs/2.png)
+![screenshot](/readme_imgs/3.png)
 
 <br/>
 
