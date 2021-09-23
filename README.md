@@ -14,10 +14,8 @@
 
 # **Getting Started** #
 
-* Download or clone the repository to the computer .
-![screenshot](/readme_imgs/4.png)
-![screenshot](/readme_imgs/5.png)
-![screenshot](/readme_imgs/6.png)
+- Clone repository
+`git clone <url here>`
 
 <br/>
 
