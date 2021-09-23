@@ -14,7 +14,7 @@
 
 # **Getting Started** #
 
-- Clone repository
+- Clone repository </br>
 `git clone <url here>`
 
 <br/>
