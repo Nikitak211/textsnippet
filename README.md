@@ -1,3 +1,9 @@
+# *About this project* #
+
+**This project was made for me in order to learn the development proccess**
+
+<br/>
+
 # **Textsnippet** #
 > Textsnippet lets you generate random texts.
 <br/>
