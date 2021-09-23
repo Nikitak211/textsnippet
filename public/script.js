@@ -3,7 +3,7 @@ const amountOfSnippets = document.getElementById('paragraphInput');
 const paragraph = document.getElementById('text-snippet');
 const sideText = document.getElementById("mute-btn-sidetext");
 const muteText = document.getElementById("mute-btn");
-let speechMuted = false;
+let readSpeech = false;
 let speech = new SpeechSynthesisUtterance();
     speech.lang = "en";
 
@@ -42,11 +42,8 @@ document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
             } else {
                 paragraph.innerHTML = data;
                 speech.text = data;
-                
-            if (speechMuted) {
-                window.speechSynthesis.speak(speech);
-            }
                 setSucces(amountOfSnippets)
+                if (readSpeech) { window.speechSynthesis.speak(speech) }
             }
         })
     )}
@@ -59,12 +56,12 @@ document.getElementById("snippet-repeat-btn").onclick = readSnippet = () => {
 
 // mute button for read snippet
 document.getElementById("mute-btn").onclick = toggle = () => {
-    if(speechMuted){
-        speechMuted = false;
+    if (readSpeech) {
+        readSpeech = false;
         muteText.innerHTML="On";
         sideText.innerHTML = "speech Off"
-    }else{
-        speechMuted = true;
+    } else {
+        readSpeech = true;
         muteText.innerHTML="Off";
         sideText.innerHTML = "speech On";
     }
