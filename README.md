@@ -18,7 +18,7 @@
 
 </br>
 
-`git clone <url here>`
+`git clone <git@github.com:Nikitak211/textsnippet.git>`
 
 <br/>
 
@@ -29,12 +29,7 @@
 
 ## **Installing** ##
  *install the following dependencies so that the app will work.*
-```
-npm i node
-npm i nodemon
-npm i express
-npm i txtgen
-```
+`npm i `
 
 <br/>
 
