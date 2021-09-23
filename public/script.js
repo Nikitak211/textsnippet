@@ -19,11 +19,11 @@ document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
     const options = {
         method: "POST",
         body: JSON.stringify(requestPayload),
-        headers: { "Content-type": "application/json; charset=UTF-8" }
+        headers: { "Content-type":"application/json; charset=UTF-8" }
     };
 
     // checks for letters and empty spaces, and bug preventing ..
-      if ( amountOfSnippetsToGenerate === "") {
+    if ( amountOfSnippetsToGenerate === "") {
         setErrorFor( amountOfSnippets, 'Number Of Paragraphs , field cannot be empty.')
     } else if ( isNaN(amountOfSnippetsToGenerate) ) {
         setErrorFor( amountOfSnippets, 'Number Of Paragraphs , field must contain only numbers.')
@@ -35,15 +35,15 @@ document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
         fetch( '/api/generateText', options )
         .then( response => response.text()
         .then( ( data ) => {
-            if(data.error){
-                alert(data.error)
-            } else if (data === "") {
+            if ( data.error ) {
+                alert( data.error )
+            } else if ( data === "" ) {
                 alert('Unknown  error has occurred.')
             } else {
                 paragraph.innerHTML = data;
                 speech.text = data;
-                setSucces(amountOfSnippets)
-                if (readSpeech) { window.speechSynthesis.speak(speech) }
+                setSucces( amountOfSnippets )
+                if ( readSpeech ) window.speechSynthesis.speak( speech ) 
             }
         })
     )}
@@ -51,12 +51,12 @@ document.getElementById('generate-snippet-btn').onclick = getSnippet = () => {
 
 //read button for readSnippet
 document.getElementById("snippet-repeat-btn").onclick = readSnippet = () => {
-    window.speechSynthesis.speak(speech); 
+    window.speechSynthesis.speak( speech ); 
 }
 
 // mute button for read snippet
 document.getElementById("mute-btn").onclick = toggle = () => {
-    if (readSpeech) {
+    if ( readSpeech ) {
         readSpeech = false;
         muteText.innerHTML="On";
         sideText.innerHTML = "speech Off"
@@ -68,7 +68,7 @@ document.getElementById("mute-btn").onclick = toggle = () => {
 };
 
 // Trigers Error 
-function setErrorFor(input, message) {
+function setErrorFor( input, message ) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
 	formControl.className = 'inputs-form error';
@@ -76,7 +76,7 @@ function setErrorFor(input, message) {
 };
 
 // Trigers success
-function setSucces(input) {
+function setSucces( input ) {
 	const formControl = input.parentElement;
 	formControl.className = 'inputs-form';
 };
