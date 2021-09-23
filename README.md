@@ -2,7 +2,7 @@
 > Textsnippet lets you generate random texts.
 <br/>
 
-> and there is an option for speach.
+> and there is an option for speech.
 
 <br/>
 
