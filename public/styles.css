@@ -1,27 +1,46 @@
-*{
-    background-color:#3fc095;
-    transition: background-color 400ms ease;
+html{
+    background-color:rgb(0, 0, 0);
+    transition: all 1.5s;
 }
 h1{
-    color: rgba(0, 0, 0, 0.678);
+    color: rgba(255, 255, 255, 0.678);
+    margin:center;
+    margin-left: -1rem;
+    font-family:sans-serif;
+
+}
+body{
+    display:flex;
+    height: 100vh;
+    justify-content:center;
+    align-items:center;
 }
 body .form {
-    position: absolute;
-    margin:auto 4em ;
-    background-color: rgba(51, 51, 51, 0.185);
+    font-family:sans-serif;
+    position: relative;
+    align-items: center;
+    place-items: center;
+    margin:auto  ;
+    background-color: rgb(41, 40, 40);
     width: 450px;
     height: 450px;
-    top: 50px;
-    left: 0;
     border: 2px solid rgba(0, 0, 0, 0);
     border-left:2px solid rgba(68, 68, 68, 0.178) ;
     border-top:2px solid rgba(68, 68, 68, 0.178) ;
-    box-shadow: -8px -7px rgba(68, 68, 68, 0.082),
-                -16px -14px rgba(68, 68, 68, 0.123),
-                -24px -21px rgba(68, 68, 68, 0.178);
+    box-shadow: none;
     border-top:2px solid rgba(68, 68, 68, 0.178) ;
     border-radius: 4px;
     box-shadow: 2px;
+    color:transparent;
+    -webkit-text-stroke: 0.2px #d6f4f4;
+    transition: all 0.5s;
+}
+body .form:hover{
+    box-shadow: -8px -7px #052c3d,
+                -16px -14px #e601c0,
+                -24px -21px #e9019a,
+                -32px -28px #f40468,
+                -40px -35px 10px #f79098;
 }
 label{
     position: relative;
@@ -30,6 +49,7 @@ label{
     left: 0;
     display: grid;
     place-items: center;
+    font-family:sans-serif;
 }
 .snip {
     position: absolute;
@@ -40,6 +60,7 @@ label{
 }
 .snip h1 {
     background-color:transparent;
+    font-family:sans-serif;
 }
 .button-container{
     background-color:transparent;
@@ -49,23 +70,31 @@ label{
     top: 0;
     left: 0;
 }
-button{
+.button{
     position: absolute;
     background-color:transparent;
     border-color: transparent;
-    border:1px solid rgba(49, 49, 49, 0.432);
+    border:0 solid rgba(49, 49, 49, 0.432);
     margin: auto;
     top: 100px ;
+    color: white;
+    font-family:sans-serif;
+    transition: all 0.5s;
 }
-button:hover{
-    border:3px solid rgba(134, 255, 110, 0.301);
-    background-color:rgba(134, 255, 110, 0.301);
+.button:hover{
+    background-color:rgba(42, 43, 42, 0.514);
+    box-shadow:  -2px -1px #052c3d,
+    -4px -3px #e601c0,
+    -6px -5px #e9019a,
+    -8px -7px #f40468,
+    -10px -9px 10px #f79098;
+    border:2px solid #052c3d33
 }
 .text{
     width: 447px;
     height: 175px;
     position: relative;
-    top: 14em;
+    top: 4em;
     left: 0;
     font-size:12px;
     padding-bottom: 100px;
@@ -75,27 +104,17 @@ button:hover{
     -webkit-background-clip: text;
     background-color: transparent;
     overflow:auto;
+    color: white;
+    font-family:sans-serif;
 }
 .text-container{
     background-color: transparent;
 }
 
 html:hover{
-    background-color:#5AC87ED9;
-    /*animation: blink-animation 0.3s steps(5, start) infinite;
-    -webkit-animation: blink-animation 0.3s steps(5, start) infinite; */
-  }
-  /* @keyframes blink-animation {
-    to {
-        background-color:rgba(46, 78, 255, 0.89);
-    }
-  }
-  @-webkit-keyframes blink-animation {
-    to {
-        background-color:rgba(240, 54, 54, 0.89);
-    }
-  } */
-
+    background-color:#ac646a;
+    transition: background-color 400ms ease;
+}
 .volume{
     background-color:transparent;
 }
@@ -118,9 +137,12 @@ span{
  input{ 
     border: 2px solid transparent;
     border-radius: 4px;
+    color: White;
+    font-family:sans-serif;
  }
  input::placeholder{
-    color: rgba(0, 0, 0, 0.678);
+    color: rgba(255, 255, 255, 0.678);
+    font-family:sans-serif;
   }
  .span{
     background-color: transparent;
@@ -138,11 +160,22 @@ span{
     top: 3.8em;
     display: grid;
     justify-content: center;
- }
-.span:hover{
-    transition: 1s ;
-    left: -3.5em;
- }
+    color:rgb(255, 255, 255);
+    animation:linear infinite alternate;
+    animation-name: run;
+    animation-duration: 1.3s;
+}     
+@keyframes run {
+    0% { left: -11em;}
+    50%{ left: -7.95em;
+         text-shadow: -2px -1px #052c3d,
+                     -4px -3px #e601c0,
+                     -6px -5px #e9019a,
+                     -8px -7px #f40468,
+                     -10px -9px 10px #f79098;
+    }
+    100%{ left: -11em;}
+}
 .inputs-form.error{
     visibility: visible;
     background-color:transparent;
@@ -156,18 +189,71 @@ span{
     border: 1px solid transparent;
     border-radius: 2px;
     background:linear-gradient(45deg , rgba(255, 0, 0, 0.432), rgba(0, 0, 255, 0.479));
-    color:rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     position:absolute;
-    height: 175%;
-    width: 75%;
+    height: 177%;
+    width: 7rem;
     bottom:0;
-    left:14.8em;
-    font-size: 12px;
+    left:18em;
+    font-size: 10px;
 }
 .inputs-form.error small{
     visibility: visible;
 }
 .paragraphs{
-    background-color:transparent;
-   
+    background-color:transparent; 
+}
+.muted{
+    position: relative;
+    margin: auto;
+    margin-left:17rem;
+    margin-top:6rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 1.5em;
+    font-family:sans-serif;
+}
+.muted p {
+    z-index: 1;
+}
+.muted button{
+    font-family:sans-serif;
+    transition: all 0.5s;
+    height: 1.5em;
+    width: 3em;
+}
+.muted button:hover{
+    color:white;
+    background-color:rgba(42, 43, 42, 0.514);
+    box-shadow:  -2px -1px #052c3d,
+    -4px -3px #e601c0,
+    -6px -5px #e9019a,
+    -8px -7px #f40468,
+    -10px -9px 10px #f79098;
+    border:2px solid #052c3d33
+}
+.repeat{
+    position: relative;
+    margin: auto;
+    margin-left:8em;
+    margin-top:-1.5em;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 1.5em;
+    width: 5em;
+    color:black;
+    font-family:sans-serif;
+    transition: all 0.5s;
+}
+.repeat:hover{
+    color:white;
+    background-color:rgba(42, 43, 42, 0.514);
+    box-shadow:  -2px -1px #052c3d,
+    -4px -3px #e601c0,
+    -6px -5px #e9019a,
+    -8px -7px #f40468,
+    -10px -9px 10px #f79098;
+    border:2px solid #052c3d33
 }
