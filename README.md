@@ -9,6 +9,9 @@
 # **Getting Started** #
 
 * Download or clone the repository to the computer .
+![screenshot](/readme_imgs/4.png)
+![screenshot](/readme_imgs/5.png)
+![screenshot](/readme_imgs/6.png)
 
 <br/>
 
@@ -51,7 +54,7 @@ npm i txtgen
 <br/>
 
 # **Contributors** #
- **8o8inCodes**
+ [**8o8inCodes**](https://github.com/8o8inCodes)
 
 <br/>
 
