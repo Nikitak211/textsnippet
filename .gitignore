@@ -1,5 +1,4 @@
-default
-docs
+package-lock.json
 node_modules
 build
 npm-debug.log
